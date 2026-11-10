@@ -1,0 +1,330 @@
+/* EVENTS WRAPPER */
+#main .events {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    padding: 3rem 4rem;
+    background: 
+        radial-gradient(1094px 1000px at 15% 65%, rgba(115,77,21,0.20), transparent 55%),   /* #734d15 */
+        radial-gradient(900px 500px at 70% 25%, rgba(41,18,133,0.30), transparent 60%),   /* #291285 */
+        radial-gradient(800px 500px at 50% 80%, rgba(127,42,76,0.20), transparent 60%),   /* #7f2a4c */
+        radial-gradient(700px 400px at 85% 70%, rgba(22,78,67,0.25), transparent 60%),    /* #164e43 */
+        linear-gradient(180deg, #1E1E1E 0%, #1a1a1a 100%);
+}
+
+#main .events::-webkit-scrollbar {
+    display: none;
+}
+
+/* GRID */
+.events .events-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 4rem;
+  grid-auto-flow: dense;
+  justify-items: center;
+  color: aliceblue;
+}
+
+/* CARD sizing */
+.events .events-container .event-card{
+  width: 100%;
+  max-height: 300px;
+  aspect-ratio: 1 / 1;
+  grid-column: span 1;
+  position: relative;
+}
+
+.events .events-container .event-card.is-open{
+  grid-column: span 2;
+  aspect-ratio: auto;
+}
+
+/* BOOK container */
+.event-card .sides-wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 18px;
+  perspective: 1400px;
+  overflow: visible;
+}
+
+/* pages */
+.event-card .page{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.event-card .page.left{
+    z-index: 1;
+    border-radius: 10%;
+    padding: 1rem 1.5rem;
+    background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+    filter: brightness(1.05);
+    box-shadow: inset 0 0 50px rgb(0, 0, 0);
+    border-right : 3px solid black;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+/* right page default hidden */
+.event-card .page.right{
+  z-index: 0;
+    border-radius: 0 10% 10% 0;
+  opacity: 0;
+  transform: translateX(0px);
+  pointer-events: none;
+
+  transition: opacity 220ms ease, transform 220ms ease;
+  transition-delay: 0ms;
+}
+
+/* cover default (closed) */
+.event-card .cover{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 4px solid black;
+  z-index: 20;
+    border-radius: 10%;
+  overflow: hidden;
+
+  /* IMPORTANT: hinge must match left overlay */
+  transform-origin: right center;
+  transform: rotateY(0deg);
+
+  backface-visibility: visible;
+  will-change: transform;
+}
+
+.event-card .front-cover{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.027);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 2rem;
+}
+
+
+
+/* OPEN or CLOSING: 2-column spread */
+.event-card.is-open .sides-wrapper,
+.event-card.is-closing .sides-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: stretch;
+  position: relative;
+}
+
+/* left page is column 1 */
+.event-card.is-open .page.left,
+.event-card.is-closing .page.left{
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  border-radius: 10% 0 0 10%;
+    border-right : 3px solid black;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+/* right page is column 2 */
+.event-card.is-open .page.right,
+.event-card.is-closing .page.right{
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+    border-left : 3px solid black;
+}
+
+/* open: right page fades in a bit AFTER cover starts opening */
+.event-card.is-open .page.right{
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  transition-delay: 280ms;
+  border-top: 4px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+.event-card.is-open .page.right {
+    display: grid;
+    backdrop-filter: blur(2px);
+}
+
+
+/* closing: keep right page visible (cover will hide it) */
+.event-card.is-closing .page.right{
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: none;
+  transition: none;
+}
+
+/* cover overlays ONLY the left half when open/closing */
+.event-card.is-open .cover,
+.event-card.is-closing .cover{
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+}
+
+/* cover open animation */
+.event-card.is-open .cover{
+  transition: transform 400ms linear;
+  transform: rotateY(180deg);
+  z-index: -1;
+  border-radius: 10% 0 0 10%;
+}
+
+/* cover close animation */
+.event-card.is-closing .cover{
+  transition: transform 700ms ease;
+  transform: rotateY(0deg);
+}
+
+.page.left .event-cover-image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.event-card.is-open .page.left {
+    padding: 0.7rem 2rem 0.7rem 2rem;
+}
+
+.event-card.is-open .page.left .event-cover-image {
+    animation: rotation 15s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+.page.left .event-cover-image .event-cover-image-outer-circle {
+    position: relative;
+    width: 32%;
+    height: 32%;
+    border-radius: 50%;
+    background-color: lightgray;
+    border: 5px solid darkgray;
+    z-index: 1;
+}
+
+.page.left .event-cover-image .event-cover-image-inner-circle {
+    position: absolute;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 10;
+}
+
+
+.cover {
+    background: url('../../../public/assets/images/paper-overlay.png');
+}
+
+.cover .front-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cover .front-cover .front-cover-inner {
+    width: 45%;
+    height: 40%;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    border-radius: 0 15% 5% 0;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.cover .front-cover .front-cover-inner .event-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    grid-row: 1;
+    padding-left: 0.2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.cover .front-cover .front-cover-inner .event-location {
+    display: flex;
+    width: 100%;
+    grid-row: 2;
+    padding-left: 0.2rem;
+    color: white;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.front-inner{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 1rem;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.front-inner .event-title{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.front-inner>div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 0.4rem;
+    position: relative;
+}
+
+.front-inner>div .event-date,
+.front-inner>div .event-time,
+.front-inner>div .event-location,
+.front-inner>div .event-vibe,
+.front-inner>div .event-music-style {
+    border-left: 2px solid white;
+    padding-left: 0.4rem;
+    font-size: 0.9rem;
+}

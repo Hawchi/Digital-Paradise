@@ -1,0 +1,45 @@
+header {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    overflow: hidden;
+    /* Liquid glass effect */
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+
+    /* border: 1px solid rgba(255, 255, 255, 0.33);
+    background: rgba(255, 255, 255, 0.10);
+    background-blend-mode: plus-lighter;
+    box-shadow: -11.15px -10.392px 48px -12px rgba(0, 0, 0, 0.15), -1.858px -1.732px 12px -8px rgba(0, 0, 0, 0.15), 2.788px 2.598px 12px 0 rgba(255, 255, 255, 0.15) inset, 1.858px 1.732px 6px 0 rgba(255, 255, 255, 0.15) inset;
+    backdrop-filter: blur(20px); */
+}
+
+header .header-nav {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 7rem;
+}
+
+header .header-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    font-family: var(--nav-bar-font-family);
+    line-height: 1.2;
+}
+
+header .header-nav ul li a[aria-current="page"] {
+    border-bottom: 3px solid var(--soft-white);
+}

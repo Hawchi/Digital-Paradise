@@ -1,0 +1,211 @@
+{
+    "events": [
+    {
+        "id": 1,
+            "title": "Caribbean Summer Vibes",
+            "date": {
+                "label": "July 19, 2026",
+                "value": "2026-07-19"
+            },
+            "time": {
+                "label": "6:00 PM - 11:30 PM",
+                "value": "18:00-23:30"
+            },
+            "location": {
+                "label": "Stadstuin Theresia – Tilburg",
+                "value": "Stadstuin Theresia - Tilburg"
+            },
+            "music-style": {
+                "label": "Caribbean, Aruban Pop, Latin",
+                "value": ["Caribbean", "Aruban Pop", "Latin"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/a.jpg"
+        },
+        {
+        "id": 2,
+            "title": "Island Groove Night",
+            "date": {
+                "label": "August 2, 2026",
+                "value": "2026-08-02"
+            },
+            "time": {
+                "label": "8:00 PM - 1:00 AM",
+                "value": "20:00-01:00"
+            },
+            "location": {
+                "label": "Café Bakker – Tilburg",
+                "value": "Café Bakker - Tilburg"
+            },
+            "music-style": {
+                "label": "Caribbean, Pop, Afro",
+                "value": ["Caribbean", "Pop", "Afro"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/b.jpg"
+        },
+        {
+        "id": 3,
+            "title": "Aruba Meets Brabant",
+            "date": {
+                "label": "August 16, 2026",
+                "value": "2026-08-16"
+            },
+            "time": {
+                "label": "7:00 PM - 12:00 AM",
+                "value": "19:00-00:00"
+            },
+            "location": {
+                "label": "Café De Plaats – Tilburg",
+                "value": "Café De Plaats - Tilburg"
+            },
+            "music-style": {
+                "label": "Aruban Pop, Caribbean, Latin",
+                "value": ["Aruban Pop", "Caribbean", "Latin"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/c.jpg"
+        },
+        {
+        "id": 4,
+            "title": "Tropical Terrace Sessions",
+            "date": {
+                "label": "September 6, 2026",
+                "value": "2026-09-06"
+            },
+            "time": {
+                "label": "5:00 PM - 10:00 PM",
+                "value": "17:00-22:00"
+            },
+            "location": {
+                "label": "RAW Rooftop – Tilburg",
+                "value": "RAW Rooftop - Tilburg"
+            },
+            "music-style": {
+                "label": "Caribbean, Chill Pop, Latin",
+                "value": ["Caribbean", "Chill Pop", "Latin"]
+            },
+            "age-restriction" : "no",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/d.jpg"
+        },
+        {
+        "id": 5,
+            "title": "Sunset Latin Lounge",
+            "date": {
+                "label": "September 20, 2026",
+                "value": "2026-09-20"
+            },
+            "time": {
+                "label": "6:30 PM - 11:00 PM",
+                "value": "18:30-23:00"
+            },
+            "location": {
+                "label": "Café Bolle – Tilburg",
+                "value": "Café Bolle - Tilburg"
+            },
+            "music-style": {
+                "label": "Latin Pop, Caribbean, Dancehall",
+                "value": ["Latin Pop", "Caribbean", "Dancehall"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/e.jpg"
+        },
+        {
+        "id": 6,
+            "title": "Island Beats Café Night",
+            "date": {
+                "label": "October 4, 2026",
+                "value": "2026-10-04"
+            },
+            "time": {
+                "label": "8:00 PM - 12:30 AM",
+                "value": "20:00-00:30"
+            },
+            "location": {
+                "label": "Café Bet Kolen – Goirle",
+                "value": "Café Bet Kolen - Goirle"
+            },
+            "music-style": {
+                "label": "Caribbean, Aruban Pop, Afro",
+                "value": ["Caribbean", "Aruban Pop", "Afro"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/f.jpg"
+        },
+        {
+        "id": 7,
+            "title": "TropiPop Friday",
+            "date": {
+                "label": "October 18, 2026",
+                "value": "2026-10-18"
+            },
+            "time": {
+                "label": "9:00 PM - 2:00 AM",
+                "value": "21:00-02:00"
+            },
+            "location": {
+                "label": "De Wagon – Tilburg",
+                "value": "De Wagon - Tilburg"
+            },
+            "music-style": {
+                "label": "Caribbean Pop, Latin, Urban",
+                "value": ["Caribbean Pop", "Latin", "Urban"]
+            },
+            "age-restriction" : "no",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/g.jpg"
+        },
+        {
+        "id":8,
+            "title": "Caribbean Coffee Sessions",
+            "date": {
+                "label": "November 1, 2026",
+                "value": "2026-11-01"
+            },
+            "time": {
+                "label": "4:00 PM - 9:00 PM",
+                "value": "16:00-21:00"
+            },
+            "location": {
+                "label": "Locals – Tilburg",
+                "value": "Locals - Tilburg"
+            },
+            "music-style": {
+                "label": "Caribbean, Chill Pop, Latin",
+                "value": ["Caribbean", "Chill Pop", "Latin"]
+            },
+            "age-restriction" : "no",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/h.jpg"
+        },
+        {
+        "id": 9,
+            "title": "Aruba After Dark",
+            "date": {
+                "label": "November 15, 2026",
+                "value": "2026-11-15"
+            },
+            "time": {
+                "label": "8:30 PM - 1:30 AM",
+                "value": "20:30-01:30"
+            },
+            "location": {
+                "label": "Café Zomerlust – Oisterwijk",
+                "value": "Café Zomerlust - Oisterwijk"
+            },
+            "music-style": {
+                "label": "Aruban Pop, Caribbean, Latin",
+                "value": ["Aruban Pop", "Caribbean", "Latin"]
+            },
+            "age-restriction" : "yes",
+            "event-vibe": "Late Night",
+            "cover-image": "./assets/images/i.jpg"
+        }
+    ]
+}

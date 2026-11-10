@@ -1,0 +1,19 @@
+#main .about2 {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: palevioletred;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+#main .about2::-webkit-scrollbar {
+    display: none;
+}
+
+#main .about2 .about2-content {
+    position: inherit;
+    width: 100%;
+    height: 1700px; /* Example height to enable scrolling, if not needed -> overflow hidden on parent (#main .about) */
+}
