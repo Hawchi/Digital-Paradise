@@ -1,8 +1,14 @@
 # Digital Paradise
 
-Digital Paradise is a Fontys HBO-ICT team project that combines a visual identity and an interactive website for an electronic music artist with Caribbean roots. The project explored two visual directions: urban nightlife and tropical festival energy.
+Digital Paradise is an electronic artist who draws on his Aruban and Venezuelan background, blending Caribbean rhythms with modern electronic production and live percussion.
 
-The website brings that identity to life with an artist introduction, an events page, a contact page, and optional audio from a live set.
+## The assignment
+
+The artist needed a consistent visual identity that captured the energy of his music and live performances and made him more recognizable to his audience. Our Fontys HBO-ICT team was asked to design a logo, a brand guide, and supporting visual assets. The identity needed to reflect three core values: community, energy, and authenticity.
+
+## The website
+
+This repository contains the website we built to apply that identity online. It introduces the artist, highlights upcoming events, provides contact information, and lets visitors listen to audio from a live set.
 
 [View the website](https://i566292.luna.fhict.nl/dj-paradise/)
 
